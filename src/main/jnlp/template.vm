@@ -1,0 +1,31 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP File for Jakarta Log4j Chainsaw v2 Application -->
+<jnlp
+  spec="1.0+"
+codebase="$project.Url"
+  href="$outputFile">
+  <information>
+    <title>Webstart demo for NovaLocation</title>
+    <vendor>Organisation name</vendor>
+    <homepage href="$project.Url"/>
+    <description>Web-application to demonstrate the WebstartMavenPlugin.</description>
+    <offline-allowed/>
+  </information>
+  <security>
+      <all-permissions/>
+  </security>
+  <resources>
+    <property name="jnlp.packEnabled" value="true"/>
+    <property name="sun.awt.disableMixing" value="true"/>
+	${dependencies}
+  </resources>
+  <resources os="Windows" arch="x86">
+    <j2se version="1.6+" java-vm-args="-Xmx512m"/>
+  </resources>
+  <resources os="Windows" arch="x86_64">
+    <j2se version="1.6+" java-vm-args="-Xmx512m"/>
+  </resources>
+  <application-desc main-class="$mainClass"/>
+
+</jnlp>

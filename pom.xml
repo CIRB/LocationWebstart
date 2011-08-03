@@ -1,0 +1,136 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>irisnet.nova.location</groupId>
+    <artifactId>nova-location-webstart</artifactId>
+    <packaging>war</packaging>
+    <version>1.0</version>
+    <url>>http://ws.irisnetlab.be${tomcat.mapping.path}</url>
+    <properties>
+        <tomcat.mapping.path>/location</tomcat.mapping.path>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.codehaus.mojo.webstart</groupId>
+            <!--groupId>com.sun.java.jnlp</groupId-->
+            <artifactId>webstart-jnlp-servlet</artifactId>
+            <version>1.0-6.0-02_ea_b02</version>
+            <scope>runtime</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>nova-location-webstart</finalName>
+        <plugins>
+
+            <plugin>
+                <groupId>org.codehaus.mojo.webstart</groupId>
+                <artifactId>webstart-maven-plugin</artifactId>
+                <version>1.0-beta-1</version>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>jnlp-download-servlet</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+                <configuration>
+
+                    <!--<outputDirectoryName>webstart</outputDirectoryName>-->
+                    <workDirectory>src/main/webapp</workDirectory>
+                    <libPath>jnlp</libPath>
+                    <excludeTransitive>false</excludeTransitive>
+                    <templateDirectory>src/main/jnlp</templateDirectory>
+
+                    <jnlpFiles>
+                        <jnlpFile>
+                            <templateFilename>template.vm</templateFilename>
+                            <outputFilename>launch.jnlp</outputFilename> -<!-- when there's only one jnlpFile, can be optioanl and defaults to launch.jnlp -->
+                            <jarResources>
+                                <jarResource>
+                                    <groupId>irisnet.nova.location</groupId>
+                                    <artifactId>nova-location</artifactId>
+                                    <version>1.0</version>
+                                    <mainClass>irisnet.nova.client.WawsClient</mainClass>
+                                </jarResource>
+                            </jarResources>
+                        </jnlpFile>
+
+                    </jnlpFiles>
+
+                    <!--<sign>
+                        <keystore>${project.basedir}\keyStore.keystore</keystore>
+                        &lt;!&ndash; path or URI (if empty, the default keystore ".keystore"-file in the user-homedir is used) &ndash;&gt;
+                        <keypass>password</keypass>
+                        &lt;!&ndash; we need to override passwords easily from the command line. ${keypass} &ndash;&gt;
+                        <storepass>password</storepass>
+                        &lt;!&ndash; ${storepass} &ndash;&gt;
+                        <alias>webstart</alias>
+                        &lt;!&ndash; the following key-settings are only used if the keystore and key has to be generated at build-time &ndash;&gt;
+                        <storetype>jks</storetype>
+                        <validity>365</validity>
+                        <dnameCn>Firstname Lastname</dnameCn>
+                        <dnameOu>OrganisationalUnit</dnameOu>
+                        <dnameO>Organisation</dnameO>
+                        <dnameL>Location</dnameL>
+                        <dnameSt>State</dnameSt>
+                        <dnameC>CountryCode</dnameC>
+
+                        &lt;!&ndash; KEYSTORE MANAGEMENT &ndash;&gt;
+                        <keystoreConfig>
+                            <delete>false</delete>
+                            &lt;!&ndash; delete the keystore at build time &ndash;&gt;
+                            <gen>true</gen>
+                            &lt;!&ndash; generate keystore and key at build time &ndash;&gt;
+                        </keystoreConfig>
+
+                        <verify>true</verify>
+                        &lt;!&ndash; verify the signature after signing &ndash;&gt;
+                    </sign>-->
+                    <unsign>true</unsign>
+                    <!-- unsign already signed packages and sign them with own key -->
+                    <verifyjar>false</verifyjar>
+                    <!-- causes a version attribute to be output in each jar resource element, optional, default is false -->
+                    <outputJarVersions>false</outputJarVersions>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webResources>
+                        <webResource>
+                            <directory>${basedir}/src/main/webapp/WEB-INF</directory>
+                            <includes>
+                                <include>web.xml</include>
+                            </includes>
+                            <!--<targetPath>WEB-INF</targetPath>-->
+                            <filtering>true</filtering>
+                        </webResource>
+                    </webResources>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <configuration>
+                    <url>http://192.168.13.35:8080/manager/html</url>
+                    <username>waws</username>
+                    <password>solune</password>
+                    <path>${tomcat.mapping.path}</path>
+                    <warFile>target/${project.artifactId}.war</warFile>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
