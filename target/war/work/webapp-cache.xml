@@ -6,12 +6,18 @@
         <pathsSet class="linked-hash-set">
           <string>web.xml</string>
           <string>index.html</string>
-          <string>jnlp/DJNativeSwing-SWT.jar</string>
-          <string>jnlp/DJNativeSwing.jar</string>
-          <string>jnlp/nova-location-1.0.jar</string>
-          <string>jnlp/swt-3.7M5-win32-win32-x86.jar</string>
           <string>launch.jnlp</string>
           <string>WEB-INF/web.xml</string>
+          <string>jnlp/swt-3.7M5-gtk-linux-x86_s-1.0.1.jar</string>
+          <string>jnlp/swt-3.7M5-win32-win32-x86_64_s-1.0.1.jar</string>
+          <string>jnlp/jna_WindowUtils_s-1.0.1.jar</string>
+          <string>jnlp/DJNativeSwing-SWT_s-1.0.1.jar</string>
+          <string>jnlp/jna-3.2.4_s-1.0.1.jar</string>
+          <string>jnlp/version.xml</string>
+          <string>jnlp/DJNativeSwing_s-1.0.1.jar</string>
+          <string>jnlp/swt-3.7M5-win32-win32-x86_s-1.0.1.jar</string>
+          <string>jnlp/nova-location-1.0.jar</string>
+          <string>jnlp/swt-3.7M5-gtk-linux-x86_64_s-1.0.1.jar</string>
           <string>WEB-INF/lib/webstart-jnlp-servlet-1.0-6.0-02_ea_b02.jar</string>
         </pathsSet>
       </path-set>
@@ -30,18 +36,18 @@
           <entry>
             <string></string>
             <org.apache.maven.model.InputLocation>
-              <lineNumber>16</lineNumber>
+              <lineNumber>15</lineNumber>
               <columnNumber>21</columnNumber>
               <source>
                 <modelId>irisnet.nova.location:nova-location-webstart:1.0</modelId>
-                <location>C:\Users\npero\LocationWebstart\pom.xml</location>
+                <location>/home/buntu/projects/LocationWebstart/pom.xml</location>
               </source>
             </org.apache.maven.model.InputLocation>
           </entry>
           <entry>
             <string>groupId</string>
             <org.apache.maven.model.InputLocation>
-              <lineNumber>17</lineNumber>
+              <lineNumber>16</lineNumber>
               <columnNumber>22</columnNumber>
               <source reference="../../../entry/org.apache.maven.model.InputLocation/source"/>
             </org.apache.maven.model.InputLocation>
@@ -49,7 +55,7 @@
           <entry>
             <string>artifactId</string>
             <org.apache.maven.model.InputLocation>
-              <lineNumber>19</lineNumber>
+              <lineNumber>18</lineNumber>
               <columnNumber>25</columnNumber>
               <source reference="../../../entry/org.apache.maven.model.InputLocation/source"/>
             </org.apache.maven.model.InputLocation>
@@ -57,7 +63,7 @@
           <entry>
             <string>version</string>
             <org.apache.maven.model.InputLocation>
-              <lineNumber>20</lineNumber>
+              <lineNumber>19</lineNumber>
               <columnNumber>22</columnNumber>
               <source reference="../../../entry/org.apache.maven.model.InputLocation/source"/>
             </org.apache.maven.model.InputLocation>
@@ -65,7 +71,7 @@
           <entry>
             <string>scope</string>
             <org.apache.maven.model.InputLocation>
-              <lineNumber>21</lineNumber>
+              <lineNumber>20</lineNumber>
               <columnNumber>20</columnNumber>
               <source reference="../../../entry/org.apache.maven.model.InputLocation/source"/>
             </org.apache.maven.model.InputLocation>
@@ -73,58 +79,6 @@
         </locations>
       </dependency>
       <targetFileName>webstart-jnlp-servlet-1.0-6.0-02_ea_b02.jar</targetFileName>
-    </org.apache.maven.plugin.war.util.DependencyInfo>
-    <org.apache.maven.plugin.war.util.DependencyInfo>
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>3.8.1</version>
-        <type>jar</type>
-        <scope>test</scope>
-        <exclusions/>
-        <locations class="linked-hash-map">
-          <entry>
-            <string></string>
-            <org.apache.maven.model.InputLocation>
-              <lineNumber>24</lineNumber>
-              <columnNumber>21</columnNumber>
-              <source reference="../../../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/locations/entry/org.apache.maven.model.InputLocation/source"/>
-            </org.apache.maven.model.InputLocation>
-          </entry>
-          <entry>
-            <string>groupId</string>
-            <org.apache.maven.model.InputLocation>
-              <lineNumber>25</lineNumber>
-              <columnNumber>22</columnNumber>
-              <source reference="../../../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/locations/entry/org.apache.maven.model.InputLocation/source"/>
-            </org.apache.maven.model.InputLocation>
-          </entry>
-          <entry>
-            <string>artifactId</string>
-            <org.apache.maven.model.InputLocation>
-              <lineNumber>26</lineNumber>
-              <columnNumber>25</columnNumber>
-              <source reference="../../../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/locations/entry/org.apache.maven.model.InputLocation/source"/>
-            </org.apache.maven.model.InputLocation>
-          </entry>
-          <entry>
-            <string>version</string>
-            <org.apache.maven.model.InputLocation>
-              <lineNumber>27</lineNumber>
-              <columnNumber>22</columnNumber>
-              <source reference="../../../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/locations/entry/org.apache.maven.model.InputLocation/source"/>
-            </org.apache.maven.model.InputLocation>
-          </entry>
-          <entry>
-            <string>scope</string>
-            <org.apache.maven.model.InputLocation>
-              <lineNumber>28</lineNumber>
-              <columnNumber>20</columnNumber>
-              <source reference="../../../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/locations/entry/org.apache.maven.model.InputLocation/source"/>
-            </org.apache.maven.model.InputLocation>
-          </entry>
-        </locations>
-      </dependency>
     </org.apache.maven.plugin.war.util.DependencyInfo>
   </dependenciesInfo>
 </webapp-structure>

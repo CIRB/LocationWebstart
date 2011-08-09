@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- JNLP File for Jakarta Log4j Chainsaw v2 Application -->
 <jnlp
-  spec="1.0+"
-codebase="http://ws.irisnetlab.be/location/"
-  href="launch.jnlp">
-  <information>
-    <title>Webstart demo for NovaLocation</title>
-    <vendor>Organisation name</vendor>
-    <homepage href="http://ws.irisnetlab.be/location/"/>
-    <description>.</description>
-    <offline-allowed/>
-  </information>
-  <security>
-      <all-permissions/>
-  </security>
-  <resources>
-    <property name="jnlp.packEnabled" value="true"/>
-    <property name="sun.awt.disableMixing" value="true"/>
-	
-<jar href="jnlp/nova-location-1.0.jar" main="true"/>
-<jar href="jnlp/DJNativeSwing-SWT.jar" />
-<jar href="jnlp/DJNativeSwing.jar" />
-<jar href="jnlp/swt-3.7M5-win32-win32-x86.jar"/>
+        spec="1.0+"
+        codebase="http://ws.irisnetlab.be/location"
+        href="launch.jnlp">
+    <information>
+        <title>Webstart demo for NovaLocation</title>
+        <vendor>Organisation name</vendor>
+        <homepage href="http://ws.irisnetlab.be/location"/>
+        <description>Web-application to demonstrate the WebstartMavenPlugin.</description>
+    </information>
+    <security>
+        <all-permissions/>
+    </security>
+    <resources>
+        <property name="jnlp.packEnabled" value="true"/>
+        <property name="sun.awt.disableMixing" value="true"/>
 
-  </resources>
-  <resources os="Windows" arch="x86">
-    <j2se version="1.6+" java-vm-args="-Xmx512m"/>
-  </resources>
-  <resources os="Windows" arch="x86_64">
-    <j2se version="1.6+" java-vm-args="-Xmx512m"/>
-  </resources>
-  <application-desc main-class="irisnet.nova.client.WawsClient"/>
+        <jar href="jnlp/nova-location-1.0.jar"/>
+        <jar href="jnlp/DJNativeSwing-SWT_s-1.0.1.jar"/>
+        <jar href="jnlp/DJNativeSwing_s-1.0.1.jar"/>
+        <jar href="jnlp/swt-3.7M5-win32-win32-x86_s-1.0.1.jar"/>
+        <jar href="jnlp/swt-3.7M5-win32-win32-x86_64_s-1.0.1.jar"/>
+        <jar href="jnlp/swt-3.7M5-gtk-linux-x86_s-1.0.1.jar"/>
+        <jar href="jnlp/swt-3.7M5-gtk-linux-x86_64_s-1.0.1.jar"/>
+        <jar href="jnlp/jna_WindowUtils_s-1.0.1.jar"/>
+        <jar href="jnlp/jna-3.2.4_s-1.0.1.jar"/>
+
+    </resources>
+    <resources os="Windows" arch="x86">
+        <j2se version="1.6+" java-vm-args="-Xmx512m"/>
+    </resources>
+    <resources os="Windows" arch="x86_64">
+        <j2se version="1.6+" java-vm-args="-Xmx512m"/>
+    </resources>
+    <application-desc main-class="irisnet.nova.client.WawsClient"/>
 
 </jnlp>

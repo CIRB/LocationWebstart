@@ -10,7 +10,6 @@ codebase="$project.Url"
     <vendor>Organisation name</vendor>
     <homepage href="$project.Url"/>
     <description>Web-application to demonstrate the WebstartMavenPlugin.</description>
-    <offline-allowed/>
   </information>
   <security>
       <all-permissions/>

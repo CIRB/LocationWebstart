@@ -5,7 +5,7 @@
     <artifactId>nova-location-webstart</artifactId>
     <packaging>war</packaging>
     <version>1.0</version>
-    <url>>http://ws.irisnetlab.be${tomcat.mapping.path}</url>
+    <url>http://ws.irisnetlab.be${tomcat.mapping.path}</url>
     <properties>
         <tomcat.mapping.path>/location</tomcat.mapping.path>
     </properties>
@@ -63,15 +63,15 @@
 
                     </jnlpFiles>
 
-                    <!--<sign>
-                        <keystore>${project.basedir}\keyStore.keystore</keystore>
-                        &lt;!&ndash; path or URI (if empty, the default keystore ".keystore"-file in the user-homedir is used) &ndash;&gt;
+                    <sign>
+                        <keystore>${project.basedir}/keyStore</keystore>
+                        <!-- path or URI (if empty, the default keystore ".keystore"-file in the user-homedir is used) -->
                         <keypass>password</keypass>
-                        &lt;!&ndash; we need to override passwords easily from the command line. ${keypass} &ndash;&gt;
+                        <!-- we need to override passwords easily from the command line. ${keypass} -->
                         <storepass>password</storepass>
-                        &lt;!&ndash; ${storepass} &ndash;&gt;
+                        <!-- ${storepass} -->
                         <alias>webstart</alias>
-                        &lt;!&ndash; the following key-settings are only used if the keystore and key has to be generated at build-time &ndash;&gt;
+                        <!-- the following key-settings are only used if the keystore and key has to be generated at build-time -->
                         <storetype>jks</storetype>
                         <validity>365</validity>
                         <dnameCn>Firstname Lastname</dnameCn>
@@ -81,17 +81,17 @@
                         <dnameSt>State</dnameSt>
                         <dnameC>CountryCode</dnameC>
 
-                        &lt;!&ndash; KEYSTORE MANAGEMENT &ndash;&gt;
+                        <!-- KEYSTORE MANAGEMENT -->
                         <keystoreConfig>
                             <delete>false</delete>
-                            &lt;!&ndash; delete the keystore at build time &ndash;&gt;
+                            <!-- delete the keystore at build time -->
                             <gen>true</gen>
-                            &lt;!&ndash; generate keystore and key at build time &ndash;&gt;
+                            <!-- generate keystore and key at build time -->
                         </keystoreConfig>
 
                         <verify>true</verify>
-                        &lt;!&ndash; verify the signature after signing &ndash;&gt;
-                    </sign>-->
+                        <!-- verify the signature after signing -->
+                    </sign>
                     <unsign>true</unsign>
                     <!-- unsign already signed packages and sign them with own key -->
                     <verifyjar>false</verifyjar>
